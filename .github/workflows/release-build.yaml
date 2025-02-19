@@ -68,7 +68,7 @@ jobs:
           cache-from: type=gha, scope=${{ github.workflow }}
           cache-to: type=gha, scope=${{ github.workflow }}
       - name: Upload Docker Image as an Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: bili-sync-rs-amd64-image
           path: ./docker-images/*.tar
