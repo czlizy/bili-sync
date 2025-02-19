@@ -11,25 +11,25 @@ on:
 jobs:
   build-binary:
     uses: czlizy/bili-sync/.github/workflows/build-binary.yaml@main
-  github-release:
-    name: Create GitHub Release
-    needs: build-binary
-    runs-on: ubuntu-20.04
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-      - name: Download release artifact
-        uses: actions/download-artifact@v4
-        with:
-          merge-multiple: true
-      - name: Publish GitHub release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: bili-sync-rs*
-          tag_name: ${{ github.ref_name }}
-          draft: true
+  # github-release:
+  #   name: Create GitHub Release
+  #   needs: build-binary
+  #   runs-on: ubuntu-20.04
+  #   permissions:
+  #     contents: write
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v4
+  #     - name: Download release artifact
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         merge-multiple: true
+  #     - name: Publish GitHub release
+  #       uses: softprops/action-gh-release@v2
+  #       with:
+  #         files: bili-sync-rs*
+  #         tag_name: ${{ github.ref_name }}
+  #         draft: true
   docker-release:
     name: Create Docker Image
     needs: build-binary
