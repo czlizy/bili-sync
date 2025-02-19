@@ -63,12 +63,20 @@ jobs:
           platforms: |
             linux/amd64
           push: false
+          load: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha, scope=${{ github.workflow }}
           cache-to: type=gha, scope=${{ github.workflow }}
+      - name: Save Docker Image
+        run: |
+          mkdir -p ./docker-images/
+          docker save -o ./docker-images/bili-sync-rs-${{ github.event.inputs.tag }}-amd64.tar ${{ steps.meta.outputs.tags }}
+
       - name: Upload Docker Image as an Artifact
         uses: actions/upload-artifact@v4
         with:
           name: bili-sync-rs-amd64-image
           path: ./docker-images/*.tar
+
+          
