@@ -86,6 +86,10 @@ impl NFOSerializer<'_> {
                             .create_element("aired")
                             .write_text_content_async(BytesText::new(&nfo_time.format("%Y-%m-%d").to_string()))
                             .await?;
+                        writer
+                            .create_element("releasedate")
+                            .write_text_content_async(BytesText::new(&nfo_time.format("%Y-%m-%d").to_string()))
+                            .await?;                
                         Ok(writer)
                     })
                     .await?;
