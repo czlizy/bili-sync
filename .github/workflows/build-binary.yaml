@@ -45,26 +45,26 @@ jobs:
             target: x86_64-unknown-linux-musl
             bin: bili-sync-rs
             name: bili-sync-rs-Linux-x86_64-musl.tar.gz
-          - release_for: Linux-aarch64
-            os: ubuntu-20.04
-            target: aarch64-unknown-linux-musl
-            bin: bili-sync-rs
-            name: bili-sync-rs-Linux-aarch64-musl.tar.gz
-          - release_for: macOS-x86_64
-            os: macOS-latest
-            target: x86_64-apple-darwin
-            bin: bili-sync-rs
-            name: bili-sync-rs-Darwin-x86_64.tar.gz
-          - release_for: macOS-aarch64
-            os: macOS-latest
-            target: aarch64-apple-darwin
-            bin: bili-sync-rs
-            name: bili-sync-rs-Darwin-aarch64.tar.gz
-          - release_for: Windows-x86_64
-            os: windows-latest
-            target: x86_64-pc-windows-msvc
-            bin: bili-sync-rs.exe
-            name: bili-sync-rs-Windows-x86_64.zip
+          # - release_for: Linux-aarch64
+          #   os: ubuntu-20.04
+          #   target: aarch64-unknown-linux-musl
+          #   bin: bili-sync-rs
+          #   name: bili-sync-rs-Linux-aarch64-musl.tar.gz
+          # - release_for: macOS-x86_64
+          #   os: macOS-latest
+          #   target: x86_64-apple-darwin
+          #   bin: bili-sync-rs
+          #   name: bili-sync-rs-Darwin-x86_64.tar.gz
+          # - release_for: macOS-aarch64
+          #   os: macOS-latest
+          #   target: aarch64-apple-darwin
+          #   bin: bili-sync-rs
+          #   name: bili-sync-rs-Darwin-aarch64.tar.gz
+          # - release_for: Windows-x86_64
+          #   os: windows-latest
+          #   target: x86_64-pc-windows-msvc
+          #   bin: bili-sync-rs.exe
+          #   name: bili-sync-rs-Windows-x86_64.zip
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
